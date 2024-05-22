@@ -21,11 +21,11 @@ include __DIR__ . "/partials/functions.php";
 
 <body>
     <div class="container">
-        <form action="index.php" method="post">
+        <form action="index.php" method="post" class="mt-5">
             <h5>inserisci la tua mail</h5>
             <input type="text" aria-label="inserisci la mail" name="email">
             <button type="submit" class="btn btn-primary">Invia</button>
-            <h6><?php mail_check(); ?></h6>
+            <h6 class="<?php class_change() ?> w-25 mt-3"><?php mail_check(); ?></h6>
         </form>
     </div>
 </body>
