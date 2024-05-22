@@ -22,6 +22,7 @@ var_dump($user_email);
             <h5>inserisci la tua mail</h5>
             <input type="text" aria-label="inserisci la mail" name="email">
             <button type="submit" class="btn btn-primary">Invia</button>
+            <h6><?php echo $user_email != "" ? "la tua email è corretta!" : "" ?></h6>
         </form>
     </div>
 </body>
