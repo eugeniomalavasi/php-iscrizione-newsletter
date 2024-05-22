@@ -1,9 +1,12 @@
 <?php
-$user_email = "";
-if(isset($_POST['email']) && str_contains(($_POST['email']), "@") && str_contains(($_POST['email']), ".")) {
-    $user_email = $_POST['email'];
-}
-var_dump($user_email);
+// $user_email = "";
+// if(isset($_POST['email']) && str_contains(($_POST['email']), "@") && str_contains(($_POST['email']), ".")) {
+//     $user_email = $_POST['email'];
+// }
+// var_dump($user_email);
+
+// callback function
+include __DIR__ . "/partials/functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +25,7 @@ var_dump($user_email);
             <h5>inserisci la tua mail</h5>
             <input type="text" aria-label="inserisci la mail" name="email">
             <button type="submit" class="btn btn-primary">Invia</button>
-            <h6><?php echo $user_email != "" ? "la tua email è corretta!" : "" ?></h6>
+            <h6><?php mail_check(); ?></h6>
         </form>
     </div>
 </body>
