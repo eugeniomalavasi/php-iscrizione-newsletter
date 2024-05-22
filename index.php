@@ -1,12 +1,10 @@
 <?php
-// $user_email = "";
-// if(isset($_POST['email']) && str_contains(($_POST['email']), "@") && str_contains(($_POST['email']), ".")) {
-//     $user_email = $_POST['email'];
-// }
-// var_dump($user_email);
+if (!isset($_SESSION)){
+    session_start();  
+} 
 
 // callback function
-include __DIR__ . "/partials/functions.php";
+include_once __DIR__ . "/partials/functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +23,8 @@ include __DIR__ . "/partials/functions.php";
             <h5>inserisci la tua mail</h5>
             <input type="text" aria-label="inserisci la mail" name="email">
             <button type="submit" class="btn btn-primary">Invia</button>
-            <h6 class="<?php class_change() ?> w-25 mt-3"><?php mail_check(); ?></h6>
         </form>
+        <h6 class="<?php class_change() ?> w-25 mt-3"><?php mail_check(); ?></h6>
     </div>
 </body>
 

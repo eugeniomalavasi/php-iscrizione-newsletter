@@ -3,12 +3,12 @@
 function mail_check() {
     if(isset($_POST['email']) && str_contains(($_POST['email']), "@") && str_contains(($_POST['email']), ".")) {
         echo "la tua mail è corretta";
+        header("Location: ./thankyou.php");
+        $_SESSION["auth"] = $_POST['email'];
     } elseif (!isset($_POST['email'])) {
         echo "";
     } 
-    else {
-        echo "la tua mail non contiene un '.' e la '@'";
-    }
+    else { echo "la tua mail non contiene un '.' e la '@'"; }
 
 }
 
